@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  todoapi:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - ./appsettings.json:/app/appsettings.json
+      - ./appsettings.Development.json:/app/appsettings.Development.json
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
